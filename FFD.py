@@ -25,7 +25,7 @@ def FFD(ED, TOTEXP=1., Lum=30., fluxerr=0., dur=[], logY=True, est_comp=False):
     ----------
     ED : array of Equiv Dur's, need to include a luminosity!
     TOTEXP : total duration of observations, in days
-    Lum : the luminosity of the star
+    Lum : the log luminosity of the star
     fluxerr : the average flux errors of your data (in relative flux units!)
     dur : array of flare durations.
     logY : if True return Y-axis (and error) in log rate (Default: True)
