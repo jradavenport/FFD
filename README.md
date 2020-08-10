@@ -10,8 +10,7 @@ A basic example of how to make the cumulative Flare Frequency Distribution plot,
 
 
 ````python
-import numpy as np
-from FFD import ffd, FlareKernel
+from FFD import FFD, FlareKernel
 
 x,y,xe,ye = FFD(EquivDur, dur=Tstop-Tstart, Lum=30.35, TotDur=50.4,
                 fluxerr=np.median(fluxerr)/np.median(flux))
@@ -30,7 +29,8 @@ plt.ylabel('log Flare Rate (day$^{-1}$)')
 If we have error estimates for the equivalent durations, we can use these to better estimate the x errors on the FFD.
 
 ````python
-from FFD import ffd, FlareKernel
+import numpy as np
+from FFD import FFD, FFD_powerlaw FlareKernel
 
 x,y,xe,ye = FFD(EquivDur, edErr=EDerr, Lum=30.35, TOTEXP=50.4)
 
@@ -48,7 +48,7 @@ We can then fit a power law to the data and estimate the energy below which the 
 b0, b1, b0_err, b1_err, cutoff = FFD_powerlaw(x, y, xe, ye, findXmin=True)
 
 xmodel = np.linspace(np.min(x), np.max(x))
-ymodel = b0*x_model + b1
+ymodel = b0*xmodel + b1
 
 plt.plot(xmodel, ymodel)
 plt.axvlines(cutoff, linestyle='--')

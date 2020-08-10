@@ -1,6 +1,7 @@
 import numpy as np
 from astropy.modeling.models import Gaussian2D
 from scipy.odr import ODR, Model, Data
+from scipy import stats
 
 def FFD(ED, edErr=[], TOTEXP=1., Lum=30., fluxerr=0., dur=[], logY=True, est_comp=False):
     '''
