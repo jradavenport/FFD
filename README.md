@@ -12,7 +12,7 @@ A basic example of how to make the cumulative Flare Frequency Distribution plot,
 ````python
 from FFD import ffd, FlareKernel
 
-x,y,xe,ye = FFD(EquivDur, dur=Tstop-Tstart, Lum=30.35, TotDur=50.4,
+x,y,xe,ye = FFD(EquivDur, dur=Tstop-Tstart, Lum=30.35, TOTEXP=50.4,
                 fluxerr=np.median(fluxerr)/np.median(flux))
 
 im, xx, yy = FlareKernel(x,y,xe,ye)
